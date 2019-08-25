@@ -1,8 +1,0 @@
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/edit_cache.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/sampleTemplateUsage.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/mowerUserA.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/expectedCopyBehavior.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/missingCopyConstructor.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/mowerUserB.dir
-/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/cmake-build-debug/CMakeFiles/pointDemo.dir
