@@ -1,0 +1,16 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/src/Point2D.h
+
+/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/src/passByValueOrReference.cpp
+iostream
+-
+Point2D.h
+/Users/kurmasz/Documents/Courses/CIS263/SampleCode/C++/GettingStarted/src/Point2D.h
+
