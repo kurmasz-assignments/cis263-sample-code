@@ -18,6 +18,13 @@ namespace cis263 {
   public:
     MyIntVector(int initialSize) : data(new int[initialSize]), vectorSize(initialSize) {}
 
+    /*
+      MyIntVector(int initialSize) {
+        data = new int[initialSize];
+        vectorSize = initialSize;
+    }
+     */
+
     // Use the macro to allow us to easily "remove" the copy constructor.
 #ifndef EXCLUDE_COPY_CONSTRUCTOR
 

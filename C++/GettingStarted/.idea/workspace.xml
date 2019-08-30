@@ -17,8 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4699db82-b4b2-4e00-b579-3c9806a9a62f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/MyIntVector.h" beforeDir="false" afterPath="$PROJECT_DIR$/src/MyIntVector.h" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -128,6 +127,7 @@
       <workItem from="1566915044396" duration="312000" />
       <workItem from="1566915411456" duration="653000" />
       <workItem from="1567015906564" duration="2029000" />
+      <workItem from="1567188437372" duration="2697000" />
     </task>
     <servers />
   </component>
