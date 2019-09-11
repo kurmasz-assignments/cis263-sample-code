@@ -1,6 +1,10 @@
 //
 // Created by Zachary Kurmas on 2019-09-11.
 //
+// To check for memory issues run
+// valgrind --leak-check=yes [./name-of-executable]
+// (remember the "./")
+//
 
 #include <vector>
 #include <iostream>
