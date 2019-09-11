@@ -2,6 +2,8 @@
 // Created by Zachary Kurmas on 2019-09-10.
 //
 
+#include <iostream>
+
 struct Pair {
   int x;
   int y;
@@ -17,4 +19,7 @@ int main() {
   delete a;
   // forgot to delete b
   delete c;
+
+  std::cout << "When run through valgrind, you should see a memory leak of 8 bytes." << std::endl;
+
 }
