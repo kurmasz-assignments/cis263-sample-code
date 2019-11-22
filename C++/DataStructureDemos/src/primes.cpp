@@ -63,14 +63,19 @@ unsigned long long check1(unsigned long long a, unsigned long long i, unsigned l
   if (i == 1) {
     return a;
   }
+
+  // Need 128 bits to store the result of 64-bit multiplication.
+  // At least one parameter must be cast to 128-bit to ensure the proper multiplication is done;
+  // (If we don't cast one of the parameters, then it will calculate a 64-bit truncated answer,
+  // then cast the incorrect answer to 128 bits.)
+  __uint128_t a_squared = (__uint128_t) a * a;
   if (i % 2 == 0) {
-    return check1((a * a) % n, i / 2, n) % n;
+    return check1((a_squared) % n, i / 2, n) % n;
   } else {
-    return (check1((a * a) % n, i / 2, n) * a) % n;
+    return ((__uint128_t) check1((a_squared) % n, i / 2, n) * a) % n;
   }
 }
 
-// because we compute a*a, a, should be < 2^32
 unsigned long long check2(unsigned long long a, unsigned long long i) {
 
   if (i == 0) {
@@ -88,7 +93,7 @@ unsigned long long check2(unsigned long long a, unsigned long long i) {
 
 bool isPrimeWeak(long long x, unsigned attempts) {
   for (unsigned i = 0; i < attempts; ++i) {
-    unsigned long long r = rand()  + 4;
+    unsigned long long r = rand() + 4;
     if (check1(r, x - 1, x) != 1) {
       return false;
     }
@@ -98,11 +103,11 @@ bool isPrimeWeak(long long x, unsigned attempts) {
 
 int main(int argc, char *argv[]) {
 
-  if (argc < 2  || string(argv[1]) != "--skip") {
+  if (argc < 2 || string(argv[1]) != "--skip") {
     timeBruteForce();
   }
 
-  unsigned long long start = (x_56_bit / 10) * 10;
+  unsigned long long start = (x_56_bit / 10) * 10 - 100;
   unsigned long long stop = 10 * x_56_bit;
 
   if (start % 10 != 0) {
@@ -123,7 +128,7 @@ int main(int argc, char *argv[]) {
       if (isPrimeWeak(candidate, 100)) {
         // cout << candidate << " Looks prime ... " << flush;
         if (isPrime(candidate)) {
-          cout << "*";
+          cout << "*" << flush;
         } else {
           cout << "FAIL" << endl;
         }
