@@ -101,8 +101,8 @@ int main(int argc, char *argv[]) {
     timeBruteForce();
   }
 
-  unsigned long long start = (x_62_bit / 10) * 10;
-  unsigned long long stop = 10 * x_62_bit;
+  unsigned long long start = (x_56_bit / 10) * 10;
+  unsigned long long stop = 10 * x_56_bit;
 
   if (start % 10 != 0) {
     cout << "Start must be a multiple of 10" << endl;
@@ -113,7 +113,7 @@ int main(int argc, char *argv[]) {
 
   for (unsigned long long i = start; i <= stop; i += 10) {
 
-    if (i % 1000000 == 0) {
+    if (i % 10'000'000 == 0) {
       cout << "." << flush;
     }
 
