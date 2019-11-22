@@ -4,4 +4,4 @@ project(DataStructureDemos)
 set(CMAKE_CXX_STANDARD 17)
 
 add_executable(iteratorsAndTemplates src/iteratorsAndTemplates.cpp)
-add_executable(valgrindMemoryDemo src/valgrindMemoryDemo.cpp)
+add_executable(isPrime src/primes.cpp)
