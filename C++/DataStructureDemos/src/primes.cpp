@@ -70,6 +70,7 @@ unsigned long long check1(unsigned long long a, unsigned long long i, unsigned l
   }
 }
 
+// because we compute a*a, a, should be < 2^32
 unsigned long long check2(unsigned long long a, unsigned long long i) {
 
   if (i == 0) {
@@ -87,7 +88,7 @@ unsigned long long check2(unsigned long long a, unsigned long long i) {
 
 bool isPrimeWeak(long long x, unsigned attempts) {
   for (unsigned i = 0; i < attempts; ++i) {
-    int r = (rand() % (x - 5)) + 4;
+    unsigned long long r = rand()  + 4;
     if (check1(r, x - 1, x) != 1) {
       return false;
     }
@@ -122,7 +123,7 @@ int main(int argc, char *argv[]) {
       if (isPrimeWeak(candidate, 100)) {
         // cout << candidate << " Looks prime ... " << flush;
         if (isPrime(candidate)) {
-          cout << "*" << endl;
+          cout << "*";
         } else {
           cout << "FAIL" << endl;
         }
