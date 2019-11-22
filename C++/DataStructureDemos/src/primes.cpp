@@ -24,7 +24,7 @@ bool isPrime(unsigned long long x) {
   if (x % 2 == 0) {
     return false;
   }
-  for (unsigned long long i = 3; i * i < x; i += 2) {
+  for (unsigned long long i = 3; i * i <= x; i += 2) {
     if (x % i == 0) {
       return false;
     }
@@ -93,8 +93,10 @@ unsigned long long check2(unsigned long long a, unsigned long long i) {
 
 bool isPrimeWeak(long long x, unsigned attempts) {
   for (unsigned i = 0; i < attempts; ++i) {
-    unsigned long long r = rand() + 4;
-    if (check1(r, x - 1, x) != 1) {
+    unsigned long long r = (rand() % (x -5)) + 4;
+    auto val = check1(r, x - 1, x);
+    if ( val != 1) {
+      //cout << r << " proves " << x << " not prime " << val << endl;
       return false;
     }
   }
@@ -103,11 +105,19 @@ bool isPrimeWeak(long long x, unsigned attempts) {
 
 int main(int argc, char *argv[]) {
 
+  srand(0);
+
+  //cout << "1201a " << isPrimeWeak(1187, 100) << endl;
+  //cout << "1201b " << isPrimeWeak(1201, 100) << endl;
+  //cout << "1201c " << isPrimeWeak(1201, 100) << endl;
+  //cout << "1201d " << isPrimeWeak(1201, 100) << endl;
+  //return 0;
+
   if (argc < 2 || string(argv[1]) != "--skip") {
     timeBruteForce();
   }
 
-  unsigned long long start = (x_56_bit / 10) * 10 - 100;
+  unsigned long long start = (1024 / 10) * 10 - 100;
   unsigned long long stop = 10 * x_56_bit;
 
   if (start % 10 != 0) {
@@ -119,16 +129,22 @@ int main(int argc, char *argv[]) {
 
   for (unsigned long long i = start; i <= stop; i += 10) {
 
-    if (i % 10'000'000 == 0) {
+    if (i % 100'000 == 0) {
       cout << "." << flush;
     }
 
     for (unsigned offset : offsets) {
       unsigned long long candidate = i + offset;
+      bool ans = isPrimeWeak(candidate, 100);
+      if ( ans != isPrime(candidate)) {
+        cout << "I disagree: " << candidate << " -- " << ans << " " << isPrime(candidate)
+          << endl;
+      }
+
       if (isPrimeWeak(candidate, 100)) {
         // cout << candidate << " Looks prime ... " << flush;
         if (isPrime(candidate)) {
-          cout << "*" << flush;
+         // cout << "*" << flush;
         } else {
           cout << "FAIL" << endl;
         }
