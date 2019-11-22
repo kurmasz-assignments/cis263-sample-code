@@ -2,3 +2,6 @@ cmake-build-debug/
 *~
 **/.idea/workspace.xml
 **/.idea/tasks.xml
+*.o
+a.out
+*.class
