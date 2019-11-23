@@ -105,7 +105,10 @@ bool isPrimeWeak(long long x, unsigned attempts) {
 
 int main(int argc, char *argv[]) {
 
-  srand(0);
+  srand(1);
+
+  unsigned long long success_count = 0;
+  unsigned long long fail_count = 0;
 
   //cout << "1201a " << isPrimeWeak(1187, 100) << endl;
   //cout << "1201b " << isPrimeWeak(1201, 100) << endl;
@@ -136,17 +139,15 @@ int main(int argc, char *argv[]) {
     for (unsigned offset : offsets) {
       unsigned long long candidate = i + offset;
       bool ans = isPrimeWeak(candidate, 100);
-      if ( ans != isPrime(candidate)) {
-        cout << "I disagree: " << candidate << " -- " << ans << " " << isPrime(candidate)
-          << endl;
-      }
-
       if (isPrimeWeak(candidate, 100)) {
         // cout << candidate << " Looks prime ... " << flush;
         if (isPrime(candidate)) {
          // cout << "*" << flush;
+         success_count++;
         } else {
-          cout << "FAIL" << endl;
+          ++fail_count;
+          cout << "FAIL " << candidate << " incorrectly identified as prime. ";
+          cout <<  endl << fail_count << " failures out of " << success_count << endl;
         }
       } // if weak true
     } // end inner for
