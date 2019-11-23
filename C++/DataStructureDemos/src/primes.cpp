@@ -138,7 +138,6 @@ int main(int argc, char *argv[]) {
 
     for (unsigned offset : offsets) {
       unsigned long long candidate = i + offset;
-      bool ans = isPrimeWeak(candidate, 100);
       if (isPrimeWeak(candidate, 100)) {
         // cout << candidate << " Looks prime ... " << flush;
         if (isPrime(candidate)) {
